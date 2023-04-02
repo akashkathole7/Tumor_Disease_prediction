@@ -1,0 +1,127 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=McLaren&display=swap');
+
+/* Colors */
+:root {
+    --primary-color: #3f88c5;
+    --secondary-color: #f15a29;
+    --tertiary-color: #a7bbc7;
+    --quaternary-color: #6c5b7b;
+    --light-color: #f2f2f2;
+    --dark-color: #333333;
+}
+
+/* Main Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+    margin: 0;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Main Heading */
+.main-heading {
+    padding: 5%;
+    text-align: center;
+    color: var(--light-color);
+    background-color: var(--primary-color);
+    font-size: 3rem;
+    font-family: 'McLaren', serif;
+    font-weight: 600;
+}
+
+/* BTD Description */
+.BTD-desc {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    padding: 3%;
+    font-family: 'McLaren', serif;
+    font-weight: 400;
+}
+
+/* Main Wrapper */
+.main-wrapper {
+    padding: 2.5%;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+}
+
+/* Project Description */
+.project-desc {
+    padding: 2.5%;
+}
+
+/* Project Image */
+.project-image {
+    height: auto;
+    width: auto;
+    padding: 7% 1% 5% 2.5%;
+}
+
+/* Project Heading */
+.project-heading {
+    padding: 0% 5% 0% 2.5%;
+    text-align: center;
+    font-family: 'McLaren', serif;
+    font-weight: 600;
+    font-size: 2rem;
+    color: var(--quaternary-color);
+}
+
+/* Bottom Section */
+.bottom-section {
+    padding: 2.5% 5% 2.5% 2.5%;
+}
+
+/* Group Members */
+.group-members {
+    padding: 3% 3% 3% 3%;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
+
+/* Project Heading */
+.proj-heading {
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: center;
+    font-family: 'McLaren', serif;
+    font-weight: 400;
+    font-size: 2rem;
+    color: var(--quaternary-color);
+}
+
+/* Group Members Description */
+.grp-mem-desc {
+    padding: 5%;
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-family: 'McLaren', serif;
+    font-weight: 400;
+}
+
+/* Group Members List */
+.group-members-list {
+    padding-top: 5%;
+}
+
+/* Group Members List Items */
+.group-members li {
+    text-align: center;
+    list-style: none;
+    font-family: 'McLaren', serif;
+    font-weight: 400;
+    font-size: 1.2rem

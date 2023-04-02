@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static',filename='CSS/index.css') }}">
+    <!-- <link rel="stylesheet" href="/BrainTumor/static/CSS/index.css"> -->
+    <title>Brain Tumor</title>
+</head>
+
+<body>
+    <section id="heading">
+        <h1 class="main-heading">Brain Tumor Detection</h1>
+        <p class="BTD-desc" style="line-height: 2;">Hey there! Let's talk about brain tumors - one of the toughest illnesses in the medical world. When a tumor starts growing in the brain, it can be hard for doctors to figure out what's going on. That's why radiologists need to be super smart and efficient when analyzing the early stages of tumor growth.
+
+            The best way to detect the grade of a brain tumor is through a stereotactic biopsy test. This is the gold standard in the medical world, but it can be a tricky and invasive process for brain tumor patients.
+            
+            Luckily, there are some non-invasive imaging techniques that can be used to diagnose brain tumors. Magnetic Resonance Imaging (MRI) is one such technique that has been used extensively.
+            
+            As a result, doctors are now working on developing systems that can detect and predict the grade of tumors based on MRI data. This is super important because it can help doctors get a better idea of what's going on in the brain without having to do an invasive procedure.
+            
+            So, while brain tumors can be a really tough disease, there are lots of smart people working on ways to diagnose and treat them more effectively.</p>
+    </section>
+    <section id="PROJECT_DESCRIPTION">
+        <div class="main-wrapper">
+            <div class="row">
+                <img class="col-lg-6 project-image" src="{{ url_for('static',filename='assets/tumor_scan.png') }}" alt="image-for-BTD">
+                <!-- <img class="col-lg-6 project-image" src="/BrainTumor/static/b3.png" alt="image-for-BTD"> -->
+                <div class="col-lg-6 project-desc">
+                    <div>
+                        <h2 class="project-heading">Brain Tumor Detection using CNN</h2>
+                        <p class="BTD-desc">they're the foundation of deep learning, a part of machine learning that's inspired by the structure of the human brain. These algorithms are super cool - they take in data, figure out patterns, and then use that knowledge to predict outputs for new sets of data.
+
+                            NNs are made up of layers of neurons, which are like the core processing units of the network. It's like having a bunch of tiny brains all working together to solve a problem.
+                            
+                            When it comes to classifier models, there are two main categories: generative models based on hand-crafted features, and discriminative models. The goal of a classifier model is to figure out whether a given piece of data belongs to one group or another. Generative models are all about figuring out the probability that a piece of data belongs to a certain group, while discriminative models are more focused on figuring out the boundaries between different groups.
+                            
+                            CNNs are a type of neural network that are particularly good at identifying features in images. They can "look" at a brain scan and train themselves to recognize the patterns that indicate whether a tumor is present or not. This is super helpful for doctors who are trying to figure out whether a patient has a brain tumor or not.
+                            
+                            So, to sum up - neural networks are like tiny brains that can recognize patterns in data. CNNs are a specific type of neural network that are great at identifying features in images, which makes them super useful for diagnosing brain tumors. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="UPLOADING_FILES_AREA">
+        <br>
+        <div class="bottom-section">
+            <h2 class="project-heading">Use our CNN model</h2>
+            <div class="row">
+                <div class="col-lg-6 upload-files">
+                    <p class="BTD-desc">Want to know what's going on inside your brain? Upload your MRI file and let our cutting-edge machines do the heavy lifting! It's like having a brain-reading robot pal who's always got your back. So go ahead, let's see what those wacky neurons are up to!</p>
+                    <form method="POST" action="" , class="form-main" enctype="multipart/form-data">
+                        {{ form.hidden_tag() }}
+                        <div class="input-group form-upload">
+                            {{ form.file(class="form-control") }}
+                            <input class="btn btn-outline-success" type="submit" value="Go">
+                        </div>
+                    </form>
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                    {% for category, message in messages %}
+                    <!-- <div class="alert alert-{{ category }} tumor-alert" role="alert">
+                        {{ message }}
+                        <button type="button" class="btn-close" style="text-align: left;" data-bs-dismiss="alert"
+                            aria-label="Close"></button>
+                    </div> -->
+                <div class="alert alert-{{ category }} tumor-alert alert-dismissible fade show" role="alert">
+                    <strong>{{ message }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                <section id="main-body">
+                    {% endfor %}
+                    {% endif%}
+                    {% endwith %}
+            </div>
+            <div class="col-lg-6">
+                <p class="BTD-desc">Hey there! Did you know that our CNN model has been trained on over 200+ real-world brain tumor images with an accuracy of over 99.5%? Pretty impressive, right? Our advanced algorithms are able to detect even the tiniest details in your MRI scans, making it easier for you to rest easy knowing that our model is on the case.
+
+                    While our model can certainly provide some peace of mind, it's important to remember that it's always a good idea to consult with a medical professional if you're experiencing any concerning symptoms. They can provide a comprehensive evaluation of your symptoms and medical history, which is something that even the best computer programs can't replicate.
+                    
+                    That being said, our CNN model can be a helpful tool in identifying potential brain tumors, and can save you a trip to the doctor's office if you're just looking for some initial guidance.</p>
+            </div>
+        </div>
+        </div>
+        <div class="group-members">
+            <h3 class="proj-heading">Akash Kathole</h3>
+
+
+            </ul>
+        </div>
+    </section>
+
+
+
+</body>
+
+</html>
